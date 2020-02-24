@@ -56,15 +56,7 @@ export default class App extends React.Component {
     this.setState({
       items: filteredItems
     })}  
-    deleteitem=(key)=>{
-        const addItemArray=Array.prototype.slice.call(this.state.addIteme);
-        console.log(addItemArray);
-        
-        const selectedItem=addItemArray.indexOf(key);
-        addItemArray.splice(selectedItem,1);
-      this.setState({
-        addIteme: addItemArray
-      })} 
+ 
 
       // DeletSlected=(e)=>{
       //   this.state.addIteme.indexOf(e)
@@ -78,7 +70,7 @@ export default class App extends React.Component {
             <input type="text" value={this.state.newItem} onChange={this.onTextBoxChange}></input>
             <button onClick={this.addItem} type="submit" className="button">Add</button>
             <button onClick={this. deleteallitem} type="submit" className="button"> deleteallitem</button>
-            <ListContainer addIteme={this.state.addIteme} deleteitem={this.deleteitem} />
+            <ListContainer addIteme={this.state.addIteme}  />
           </div>
         </form>
         <h1>List of recommended books</h1>

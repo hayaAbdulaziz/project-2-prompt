@@ -10,9 +10,9 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       addIteme: [],
-      booklist:[]
+      booklist:[],
+      }
     }
-  }
   addItem = (e) => {
     e.preventDefault();
     console.log('Add Item!');
@@ -50,27 +50,40 @@ export default class App extends React.Component {
         console.log('ERROR: ', err);
       });
   };
-  deleteallitem(key){
-    const filteredItems= this.state.items.filter(item =>
-      item.key!==key);
-    this.setState({
-      items: filteredItems
-    })}  
- 
 
-      // DeletSlected=(e)=>{
-      //   this.state.addIteme.indexOf(e)
-      // }
+    deleteallitem = (key) => {
+        //key.preventDefault();
+        console.log(key)
+        const Items =this.state.addIteme;
+        console.log(Items)
+         Items.splice(key);
+       this.setState({addIteme:Items})
+      }
+    deleteitem = (key) => {
+      //key.preventDefault();
+      console.log(key)
+      const Items =this.state.addIteme;
+      console.log(Items)
+       Items.splice(key,1);
+     this.setState({addIteme:Items})
+    }
+    editTask(task,i){
+    this.state.taskName =task.title;
+    this.state.data.splice(i,1);
+    this.setState(this.state);
+    }
+
   render() {
     return (
       <div>
         <form>
           <div className="Form">
+            <h1>The list of books I want to read</h1>
             <label className="label">Add new Item</label>
             <input type="text" value={this.state.newItem} onChange={this.onTextBoxChange}></input>
-            <button onClick={this.addItem} type="submit" className="button">Add</button>
-            <button onClick={this. deleteallitem} type="submit" className="button"> deleteallitem</button>
-            <ListContainer addIteme={this.state.addIteme}  />
+            <button onClick={this.addItem} type="button" className="button">Add</button>
+            <button onClick={this.deleteallitem} type="button" className="button"> deleteallitem</button>
+            <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem}   editTask={this.editTask}/>
           </div>
         </form>
         <h1>List of recommended books</h1>

@@ -10,7 +10,22 @@
   height: 50px;
   background-color:skyblue;
   border-radius: 5px;
+  text-align: center;
+
 } 
+label {
+  text-align: center;
+}
+input{
+  text-align: center;
+}
 button{
-  
+    background-color: gray; 
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }

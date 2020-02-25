@@ -4,9 +4,12 @@ export default class ListItem extends React.Component {
 
 
   render() {
+  
+
     return (
       <div>
       <p className="list" >{this.props.taskName}</p>
+     
      
       </div>
     );

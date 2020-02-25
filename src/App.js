@@ -11,6 +11,8 @@ export default class App extends React.Component {
     this.state = {
       addIteme: [],
       booklist:[],
+      item:'',
+      completed: []
       }
     }
   addItem = (e) => {
@@ -67,12 +69,39 @@ export default class App extends React.Component {
        Items.splice(key,1);
      this.setState({addIteme:Items})
     }
-    editTask(task,i){
-    this.state.taskName =task.title;
-    this.state.data.splice(i,1);
-    this.setState(this.state);
-    }
+  
+    edititem = (id) => {
+     console.log(id)
+     const filtereeditems =this.state.addIteme.filter(items =>items.id!==id);
+     const selectitem=this.state.addIteme.find(items =>items.id===id);
+     console.log(selectitem)
+     this.setState({
+      addIteme:filtereeditems,
 
+     })
+    }
+    Markcomplete = (e) => {
+      console.log("complete");
+     const currentSelecter= this.state.addIteme.indexOf(e);
+     const markedarray=this.state.completed;
+     markedarray.push(currentSelecter)
+      this.setState({
+        completed:markedarray
+      });
+    }
+    Markdelete = (e) => {
+        const completed=Array.prototype.slice.call(this.state.completed)
+        const addIteme=this.state.addIteme
+        console.log("delet");
+          completed.forEach(element => {
+            const completedIndex=addIteme.indexOf(element);
+            console.log(completedIndex);
+            return addIteme.splice(completedIndex,1);
+        });
+        this.setState({
+          addIteme:addIteme
+        })
+      }
   render() {
     return (
       <div>
@@ -83,7 +112,8 @@ export default class App extends React.Component {
             <input type="text" value={this.state.newItem} onChange={this.onTextBoxChange}></input>
             <button onClick={this.addItem} type="button" className="button">Add</button>
             <button onClick={this.deleteallitem} type="button" className="button"> deleteallitem</button>
-            <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem}   editTask={this.editTask}/>
+            <button onClick={this.Markdelete} type="button" className="button">   Markdelete</button>
+            <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem}   edititem ={this.edititem} Markcomplete={this.Markcomplete}/>
           </div>
         </form>
         <h1>List of recommended books</h1>

@@ -86,8 +86,12 @@ export default class App extends React.Component {
      const markedarray=this.state.completed;
      markedarray.push(currentSelecter)
       this.setState({
-        completed:markedarray
+        completed:markedarray,
+     
       });
+     
+      alert("Markcomplete");
+     
     }
     Markdelete = (e) => {
         const completed=Array.prototype.slice.call(this.state.completed)
@@ -96,7 +100,7 @@ export default class App extends React.Component {
           completed.forEach(element => {
             const completedIndex=addIteme.indexOf(element);
             console.log(completedIndex);
-            return addIteme.splice(completedIndex,1);
+            return addIteme.splice(e,1);
         });
         this.setState({
           addIteme:addIteme
@@ -117,9 +121,9 @@ export default class App extends React.Component {
           </div>
         </form>
         <h1>List of recommended books</h1>
-    <ul><li>{this.state.booklist[0]}</li>
-    <li>{this.state.booklist[1]}</li>
-    <li>{this.state.booklist[2]}</li></ul>
+    <p>{this.state.booklist[0]}</p>
+    <p>{this.state.booklist[1]}</p>
+    <p>{this.state.booklist[2]}</p>
       </div>
 
     )

@@ -12,7 +12,8 @@ export default class App extends React.Component {
       addIteme: [],
       booklist:[],
       item:'',
-      completed: []
+      completed: [],
+      setEditing:false
       }
     }
   addItem = (e) => {
@@ -70,23 +71,35 @@ export default class App extends React.Component {
      this.setState({addIteme:Items})
     }
   
-    edititem = (id) => {
-     console.log(id)
-     const filtereeditems =this.state.addIteme.filter(items =>items.id!==id);
-     const selectitem=this.state.addIteme.find(items =>items.id===id);
-     console.log(selectitem)
-     this.setState({
-      addIteme:filtereeditems,
-
-     })
-    }
-    Markcomplete = (e) => {
-      console.log("complete");
-     const currentSelecter= this.state.addIteme.indexOf(e);
+      edititem = (index,value) => {
+        const addIteme=this.state.addIteme;
+        console.log(addIteme);
+        
+        let edit=addIteme[index]
+        console.log(edit);
+        // edit[value]=value;
+        let newValue = ''
+        console.log(value);
+        this.setState({
+          addIteme:edit = newValue
+        })
+      }
+   
+    Markcomplete = (index) => {
+      console.log("mark complete")
+     const currentSelecter= this.state.addIteme[index];
+      console.log(index, "index");
+      console.log(this.state.addIteme, "add item array");
+      console.log(currentSelecter, "current selector")
+      
      const markedarray=this.state.completed;
+     console.log(markedarray, "compplete arr");
+     
      markedarray.push(currentSelecter)
       this.setState({
         completed:markedarray,
+        // color: "red",
+        // fontWeight: "bold"
      
       });
      
@@ -97,16 +110,17 @@ export default class App extends React.Component {
         const completed=Array.prototype.slice.call(this.state.completed)
         const addIteme=this.state.addIteme
         console.log("delet");
-          completed.forEach(element => {
+         this.state.completed.forEach(element => {
             const completedIndex=addIteme.indexOf(element);
             console.log(completedIndex);
-            return addIteme.splice(e,1);
+            addIteme.splice(e,1);
         });
         this.setState({
           addIteme:addIteme
         })
       }
   render() {
+   
     return (
       <div>
         <form>
@@ -116,8 +130,10 @@ export default class App extends React.Component {
             <input type="text" value={this.state.newItem} onChange={this.onTextBoxChange}></input>
             <button onClick={this.addItem} type="button" className="button">Add</button>
             <button onClick={this.deleteallitem} type="button" className="button"> deleteallitem</button>
-            <button onClick={this.Markdelete} type="button" className="button">   Markdelete</button>
-            <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem}   edititem ={this.edititem} Markcomplete={this.Markcomplete}/>
+            <button onClick={()=> this.state.Markdelete} type="button" className="button">   Markdelete</button>
+            <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem} 
+            
+              edititem ={this.edititem} Markcomplete={this.Markcomplete}/>
           </div>
         </form>
         <h1>List of recommended books</h1>
@@ -126,6 +142,6 @@ export default class App extends React.Component {
     <p>{this.state.booklist[2]}</p>
       </div>
 
-    )
+    );
   }
 }

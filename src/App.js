@@ -5,22 +5,21 @@ import ListItem from "./ListItem";
 import ListContainer from "./ListContainer";
 import { Link } from "react-router-dom";
 //API https://www.googleapis.com/books/v1/volumes?q=quilting.
+//http://localhost:3000/.github.io/project-2-prompt
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       addIteme: [],
       booklist: [],
-      item: "",
       completed: [],
-      setEditing: false
     };
   }
   addItem = e => {
     e.preventDefault();
     console.log("Add Item!");
     this.setState({
-      addIteme: [...this.state.addIteme, this.state.newItem],
+      addIteme: [...this.state.addIteme,this.state.newItem],
       newItem: ""
     });
   };
@@ -53,7 +52,7 @@ export default class App extends React.Component {
   }
 
   deleteallitem = key => {
-    //key.preventDefault();
+   
     console.log(key);
     const Items = this.state.addIteme;
     console.log(Items);
@@ -61,7 +60,7 @@ export default class App extends React.Component {
     this.setState({ addIteme: Items });
   };
   deleteitem = key => {
-    //key.preventDefault();
+   
     console.log(key);
     const Items = this.state.addIteme;
     console.log(Items);
@@ -71,7 +70,6 @@ export default class App extends React.Component {
 
   edititem = (index, newValue) => {
     console.log(index, newValue);
-    // index you to edit + the value
     const newArray = this.state.addIteme;
     newArray[index] = newValue;
 
@@ -95,12 +93,11 @@ export default class App extends React.Component {
     alert("Markcomplete");
   };
   markdelete = () => {
-    // const completed=Array.prototype.slice.call(this.state.completed)
     const addIteme = this.state.addIteme;
     console.log("delete");
-    const oldArray=this.state.completed.forEach((element,i) => {
-      // const completedIndex = addIteme[element];
-      // console.log(completedIndex);
+   this.state.completed.forEach((element) => {
+       const completedIndex = addIteme[element];
+      console.log(completedIndex);
       addIteme.splice(element - 1, 1);
     });
     this.setState({

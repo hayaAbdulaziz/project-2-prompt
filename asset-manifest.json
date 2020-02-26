@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/.github.io/project-2-prompt/static/css/main.4681d5a8.chunk.css",
+    "main.js": "/.github.io/project-2-prompt/static/js/main.1b6b723f.chunk.js",
+    "main.js.map": "/.github.io/project-2-prompt/static/js/main.1b6b723f.chunk.js.map",
+    "runtime-main.js": "/.github.io/project-2-prompt/static/js/runtime-main.840dfbbc.js",
+    "runtime-main.js.map": "/.github.io/project-2-prompt/static/js/runtime-main.840dfbbc.js.map",
+    "static/js/2.dd301495.chunk.js": "/.github.io/project-2-prompt/static/js/2.dd301495.chunk.js",
+    "static/js/2.dd301495.chunk.js.map": "/.github.io/project-2-prompt/static/js/2.dd301495.chunk.js.map",
+    "index.html": "/.github.io/project-2-prompt/index.html",
+    "precache-manifest.e405bdd0fa988b2f1078195b6bd3a6e7.js": "/.github.io/project-2-prompt/precache-manifest.e405bdd0fa988b2f1078195b6bd3a6e7.js",
+    "service-worker.js": "/.github.io/project-2-prompt/service-worker.js",
+    "static/css/main.4681d5a8.chunk.css.map": "/.github.io/project-2-prompt/static/css/main.4681d5a8.chunk.css.map",
+    "static/js/2.dd301495.chunk.js.LICENSE.txt": "/.github.io/project-2-prompt/static/js/2.dd301495.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/.github.io/project-2-prompt/static/media/Book1.ba4278a3.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.840dfbbc.js",
+    "static/js/2.dd301495.chunk.js",
+    "static/css/main.4681d5a8.chunk.css",
+    "static/js/main.1b6b723f.chunk.js"
+  ]
+}

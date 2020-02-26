@@ -9,7 +9,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addIteme: ["11", "22", "33", "44"],
+      addIteme: [],
       booklist: [],
       item: "",
       completed: [],

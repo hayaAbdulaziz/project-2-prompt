@@ -27,7 +27,7 @@ export default class ListContainer extends React.Component {
       this.toggleState();
     }
   render() {
-  let {isEdit}=this.state;
+  // let {isEdit}=this.state;
     const allItems = this.props.addIteme.map((task, index)=> {
       console.log(this)
       return(<div>
@@ -35,10 +35,10 @@ export default class ListContainer extends React.Component {
   <button onClick={()=>this.props.deleteitem(index)} type="button" className="button"> deleteitem</button>
       <button onClick={()=> this.toggleState(index)}type="button" className='button-edit'>Edit </button > 
       <button onClick={()=> this.props.Markcomplete(index)} type="button" className="button">Markcomplete</button>
-      <Fragment>
-        
+
+      {/* <Fragment>
         {isEdit? this.updateForm():this.toggleState}
-      </Fragment>
+      </Fragment> */}
 </div>
       ) 
     });

@@ -106,14 +106,14 @@ export default class App extends React.Component {
       alert("Markcomplete");
      
     }
-    Markdelete = (e) => {
-        const completed=Array.prototype.slice.call(this.state.completed)
+    markdelete = () => {
+        // const completed=Array.prototype.slice.call(this.state.completed)
         const addIteme=this.state.addIteme
-        console.log("delet");
-         this.state.completed.forEach(element => {
-            const completedIndex=addIteme.indexOf(element);
+        console.log("delete");
+         this.state.completed.forEach((element) => {
+            const completedIndex=addIteme[element];
             console.log(completedIndex);
-            addIteme.splice(e,1);
+            addIteme.splice(element-1,1);
         });
         this.setState({
           addIteme:addIteme
@@ -130,9 +130,8 @@ export default class App extends React.Component {
             <input type="text" value={this.state.newItem} onChange={this.onTextBoxChange}></input>
             <button onClick={this.addItem} type="button" className="button">Add</button>
             <button onClick={this.deleteallitem} type="button" className="button"> deleteallitem</button>
-            <button onClick={()=> this.state.Markdelete} type="button" className="button">   Markdelete</button>
+            <button onClick={this.markdelete} type="button" className="button">Markdelete</button>
             <ListContainer addIteme={this.state.addIteme}  deleteitem={this.deleteitem} 
-            
               edititem ={this.edititem} Markcomplete={this.Markcomplete}/>
           </div>
         </form>

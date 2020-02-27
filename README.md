@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # React List App
 ###  Technologies used:
 1. Visual Studio Code
@@ -8,7 +6,7 @@
 4. Axios.
 5. Google Book API
 ### Wireframes :
-![wireframe](BookListDg.png)
+![wireframe](./src/BookListDg.png)
 
  ### User Stories:
 * As a user, I should be able to Add New item in a list.
@@ -26,4 +24,3 @@
 
 ### favorite functionality:
   *   my favorite functionality is addItem function describe This function Allow the user to Add New item in a list.
->>>>>>> 687b3931de7f0f3a3015ca10efcb96fd9c494af3

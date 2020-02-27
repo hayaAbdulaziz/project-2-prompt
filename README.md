@@ -20,7 +20,7 @@
 * Problem with  preventDefault();  Solved by changing the button type to button.
    
     ### Unsolved Problems:
-   * Use  Dom Show the message would be fixed in future iterations.
+   * Use alert to Show the message Mark the item as complete It will be improved in the future .
 
 ### favorite functionality:
   *   my favorite functionality is addItem function describe This function Allow the user to Add New item in a list.

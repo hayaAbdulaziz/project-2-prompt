@@ -5,10 +5,11 @@ export default class ListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // isEdit:false,
+   
        input:"",
       }
     }
+    //Function to handle Change input
     handleChange=(e)=>{
        this.setState({
         input:e.target.value
